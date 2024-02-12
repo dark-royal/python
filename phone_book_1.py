@@ -1,4 +1,4 @@
-class contacts:
+class Contacts:
     def __init__(self):
         self.contacts = {}
 
@@ -12,20 +12,19 @@ class contacts:
         else:
             print(f"{name} not found in contact")
 
-    def search_contact1(self,phone_number):
-        if contacts in self.contacts:
+    def search_contact1(self, phone_number):
+        if phone_number in self.contacts:
             print(f'{phone_number}-> {self.contacts[phone_number]}')
         else:
             print(f'{phone_number} not found in contact')
 
     def display_contacts(self):
-        print("contact:")
         for name, phone_number in self.contacts.items():
             print(f"{name}->{phone_number}")
 
 
-def main_menu(phone_number):
-    phonebook = contacts()
+def main_menu():
+    phonebook = Contacts()
 
     while True:
         print("""\nMain Menu:" +
@@ -35,7 +34,7 @@ def main_menu(phone_number):
         "\t\tEnter 4-> Display Contacts" +
         "\t\tEnter 5-> Exit""")
 
-        option = int(input("Enter your option (1-4): "))
+        option = int(input("Enter your option (1-5 ): "))
         match option:
             case 1:
                 name = input("Enter the contact_name: ")
@@ -55,8 +54,8 @@ def main_menu(phone_number):
             case _:
                 print("Invalid option")
 
-if __name__ == "__main__":
-    main_menu
+
+main_menu()
 
 # lists = [i for i in (range(5))]
 # for i in range(10):
