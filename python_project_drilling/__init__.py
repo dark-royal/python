@@ -87,27 +87,73 @@
 # print(numbers)
 
 
+#
+#
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+# var = numbers[1:len(numbers): 2]
+# print(var)
+#
+# yoo = numbers[5:9] = [0] * len(numbers[5:9])
+# print(numbers)
+#
+# num = numbers[:5]
+# print (num)
+#
+# nums = numbers[:] = []
+# print(nums)
+
+# numbers = list(range(1, 16))
+filtering = 8
+list2 = [item for item in range(1, 11) if item % 2 == 0]
+print(list2)
+
+colors = ['red', 'yellow', 'blue', 'green']
+colors2 = [item.upper() for item in colors]
+print(colors)
+
+multiple = [i for i in range(3, 30, 3)]
+print(multiple)
+
+# del numbers[:4]
+# print(numbers)
+#
+# del numbers[::2]
+# print(numbers)
+
+# def modifying_element(items):
+#     for i in range(len(items)):
+#         items[i] *= 2
+#
+#
+# numbers = [10, 2, 5, 6]
+#
+# modifying_element(numbers)
+# print(numbers)
+#
+#
+
+from decimal import Decimal
 
 
+class Account:
+    def __init__(self, name, balance: Decimal):
+        self.name = name
+        self.__balance = balance
+
+    @property
+    def balance(self):
+        return self.__balance
+
+    @balance.setter
+    def balance(self, balance):
+        if balance < Decimal(0.00):
+            raise ValueError("invalid amount for balance")
+
+        self.balance = balance
+
+    def __str__(self):
+        return f"Name:{self.name} Balance: {self.balance}"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ai = Account('dayo', Decimal(10))
+print(ai)

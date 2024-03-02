@@ -22,5 +22,26 @@ class MyTestCase(unittest.TestCase):
     def test_two_set_and_return_new_set(self):
         number1 = {1, 2, 3, 4, 5}
         number2 = {1, 4, 5, 6, 7, 8}
-        expected =
+        expected = {1, 4, 5}
+        self.assertEqual(expected, python_wahala.find_intersection(number1, number2))
 
+    def test_display_list(self):
+        numbers = list((range(1, 16)))
+        expected = list((1, numbers))
+        self.assertEqual(expected, python_wahala.display_list(numbers))
+
+    def test_element_duplicate(self):
+        numbers = list(range(1, 16))
+        expected = numbers * 2
+        self.assertEqual(expected, python_wahala.element_duplicate(numbers))
+
+    def test_eliminate_duplicate(self):
+        numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15]
+        expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        self.assertEqual(expected, python_wahala.eliminate_duplicate(numbers))
+
+    def test_add_third_element(self):
+        numbers = list(range(1, 16))
+        print(numbers)
+        expected = 45
+        self.assertEqual(expected, python_wahala.add_element(numbers))
